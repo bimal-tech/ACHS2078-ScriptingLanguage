@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <input type="text">
+    <button type="button" onclick="calculateMultiplicationTable()">Calculate</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        function calculateMultiplicationTable() {
+            let number = document.querySelector('input').value;
+
+            if (isNaN(number)) {
+                document.querySelector('#result').innerHTML = "Enter a valid number. Texts not accepted";
+                return;
+            }
+
+            if (number == '') {
+                document.querySelector('#result').innerHTML = "Enter a number. Blank not accepted";
+                return;
+            }
+            if (number < 0) {
+                document.querySelector('#result').innerHTML = "Enter a valid number. Negative not accepted";
+                return;
+            }
+            if (parseInt(number) != number) {
+                document.querySelector('#result').innerHTML = "Enter a valid number. Decimal not accepted";
+                return;
+            }
+
+
+            let multiplicationTableString = '';
+
+            for (let index = 1; index <= 10; index++) {
+                multiplicationTableString += `${number} * ${index} = ${number*index} <br><br>`;
+            }
+            document.querySelector('#result').innerHTML = multiplicationTableString;
+        }
+    </script>
+
+</body>
+
+</html>
