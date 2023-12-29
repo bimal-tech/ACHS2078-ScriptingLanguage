@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+    <script>
+        arr = [0, 1, 2, 0, 2, 5, 0, 6, 8, 0, 9];
+        duplicate_arry = [];
+
+
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    if (duplicate_arry.indexOf(arr[i]) == '-1') {
+                        duplicate_arry.push(arr[i]);
+                    }
+                }
+            }
+        }
+        console.log(duplicate_arry);
+    </script>
+
+</body>
+
+</html>
