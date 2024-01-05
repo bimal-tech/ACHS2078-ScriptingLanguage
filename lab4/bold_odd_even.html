@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <div class="oddEvenContainer">
+
+    </div>
+    <script>
+        let content = '';
+        for (let number = 50; number <= 60; number++) {
+            if (number % 2 == 0) {
+                content += `<span>${number}</span><br>`;
+                // Even condition
+            } else {
+                content += `<b>${number}</b><br>`;
+                // Odd Condition
+            }
+
+        }
+
+        document.querySelector('.oddEvenContainer').innerHTML = content;
+    </script>
+
+</body>
+
+</html>

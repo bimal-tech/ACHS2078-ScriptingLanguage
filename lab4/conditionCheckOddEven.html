@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+<input type="text" id="firstNum" placeholder="First Number">
+<br>
+<br>
+<input type="text" id="secondNum" placeholder="Second Number">
+<br>
+<br>
+<button onclick="generateOddEvenPattern()">Click Me</button>
+<br>
+<br>
+<div id="container"></div>
+
+<body>
+    <script>
+        function generateOddEvenPattern() {
+            let content = '';
+            let number1 = parseInt(document.querySelector('#firstNum').value);
+            if (isNaN(number1) || number1 < 0) {
+                document.querySelector('#container').innerHTML = 'First Number is Invalid';
+                return;
+            }
+            let number2 = parseInt(document.querySelector('#secondNum').value);
+            if (isNaN(number2) || number2 < 0) {
+                document.querySelector('#container').innerHTML = 'Second Number is Invalid';
+                return;
+            }
+            if (number1 < number2) {
+                for (let number = number1; number <= number2; number++) {
+                    if (number % 2 == 0) {
+                        content += `<b>${number}</b><br>`;
+                        // Even condition
+                    } else {
+                        content += `<span>${number}</span><br>`;
+                        // Odd Condition
+                    }
+
+                }
+                document.querySelector('#container').innerHTML = content;
+
+            } else {
+
+                document.querySelector('#container').innerHTML = 'First Number is larger or equal to second number';
+                return;
+            }
+        }
+    </script>
+</body>
+
+</html>
